@@ -1,0 +1,131 @@
+body{
+  color: #fcf5f5;
+  background-image: url("https://assets-global.website-files.com/61fc302889864bb79c5ef818/63e1896b69365c7816d0883a_tour-eiffel-podium-paris-fashion-week-chauffeur-driven-car-hires-dbsexperience.jpg");
+  background-repeat:repeat-x;
+
+ }
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border: solid 2px black;
+  background-color: rgba(255, 255, 255, 0.194);
+  }
+header#topheader {
+ background-image: url(logo.png);
+ background-repeat:no-repeat;
+  height: 135px;
+  color: rgb(232, 14, 178);
+  text-decoration:outline;      
+  font-size: 400%;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 10px;
+
+  
+  }
+article {
+  color:#fafafa;
+  border: solid 2px black;
+  background-color: #00000099;
+  width: 60%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10px;
+  margin-bottom: 10px;
+  }
+article header {
+ background-image:url(articleicon.png);
+ background-size: 80px;
+ background-repeat: no-repeat;
+  height: 80px;
+  border-bottom: 2px solid grey;
+  padding-left: 80px;
+  font-size: 400%;
+  font-weight: 200;
+  font-weight: 200;
+  }
+
+  a{
+    font-size:200%; 
+    color: #f8eef0;
+  }
+
+  a:visited{
+    color: rgb(243, 190, 190);
+  }
+
+  .model{
+    width: 250px;
+  }
+  .large{
+    width: 400px;
+  }
+  .Newsletter{
+    margin:5.4vh auto;
+    color:#ebf61d;
+    background-color: #0000007f;
+    width: 300px;
+  }
+  .formBox{
+    float: right;
+  }
+  fieldset label{
+    padding-top: 40em;
+  }
+  h1{
+    background-color: #0000007f;
+    color:#de0b95;
+    }
+  .Newsletter label{
+    font-size:20px;
+  }
+  .CardHolder{
+    display:grid;
+    grid-template-columns: auto auto auto;
+    width:80%;
+    margin:auto;
+    justify-content: space-around;
+    grid-gap:10px;
+  }
+  .Card{
+    border:solid 3px rgb(246, 6, 14);
+    padding:3px;
+    aspect-ratio: 2/3;
+    background-color:#0000007f;
+    width:50%;
+    color:#fcaa33;
+  }
+  .Card img{
+    width:100%;
+  }
+  .CardTitle{
+    display: block;
+    text-align: center;
+    font-size: 2vw;
+  }
+  .Description{
+    font-size: 1.3em;
+    text-align:center;
+    display:block;
+
+  }
+  .Card button{
+    width:100%;
+  }
+.textcolor{
+  color:#e7c207f5;
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 430px) {
+   
+    article{
+      margin:none;
+      width:100%;
+    }
+    .Card{
+      width:30vw;
+    }
+  }
