@@ -1,0 +1,71 @@
+Software Requirements Specification (SRS)
+Project: Dusti's Fashion Closet Website
+Date: 2025-05-26
+
+1. Introduction
+
+This SRS documents the recent changes and enhancements made to the Dusti's Fashion Closet website to improve user experience, responsiveness, and feature set.
+
+2. Scope
+
+The website is an e-commerce platform for women's fashion accessories, featuring product browsing, a shopping cart, appointment booking, and user authentication.
+
+3. Recent Changes
+
+3.1 User Interface and Responsiveness
+Navigation Bar:
+Redesigned with a flex layout for responsiveness.
+Navigation links now wrap and adjust for mobile screens.
+Cart icon and count are always visible and styled.
+
+Color Scheme:
+Consistent use of dark backgrounds, yellow and pink highlights, and cursive fonts across all pages.
+
+Form Styling:
+Newsletter and appointment forms styled for clarity and mobile-friendliness.
+Inputs, selects, and buttons use consistent colors and spacing.
+
+Product Cards:
+Product grid uses CSS Grid/Flexbox for alignment.
+Cards are evenly spaced, consistent in size, and responsive.
+Twelve product cards display in a 4x3 grid (4 rows, 3 columns).
+
+3.2 User Features
+Authentication:
+Only a login page is provided; the sign-up page has been removed for simplicity.
+Login page includes a "Create Account" link for future extensibility.
+
+Appointment Booking:
+Appointment form is visually enhanced and styled to match the site.
+Form fields include name, email, date, time, and comments.
+
+Newsletter Signup:
+Newsletter form added to the homepage with required fields and state selection.
+
+3.3 Code and Structure
+HTML/CSS Refactoring:
+Inline and external CSS unified for consistent appearance.
+Semantic HTML tags used for accessibility.
+
+JavaScript Enhancements:
+Cart logic uses localStorage for persistence.
+Cart count updates dynamically across pages.
+Form submissions use modern event handling.
+
+Removed Features:
+Sign-up page and navigation link removed as per new requirements.
+
+4. Non-Functional Requirements
+Responsiveness:
+All pages adapt to mobile, tablet, and desktop screens.
+
+Accessibility:
+Labels and color contrast improved for readability.
+
+Maintainability:
+CSS and JavaScript are modular and reusable.
+
+5. Future Improvements
+Add user registration if needed.
+Integrate real backend for authentication and appointment storage.
+Add order history and payment integration.
