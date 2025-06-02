@@ -1,60 +1,65 @@
 Blake Riley
 Jesse Harlan
- I T280
- 4/21/2025
-                                  	               Updated  SRS
-                               Software Requirement Specification (SRS) document (Week Seven)
-Software Requirement Specification (SRS)
-1. Introduction
-1.1 Purpose
-The Fashion Website(Dusti’s Closet) for Women's Clothing aims to provide a seamless online shopping experience with an elegant UI, secure transactions, and efficient order management.
-1.2 Scope
-	Platform: Web-based 
-	User Roles: Customers, Admins
-Core Features: Product Catalog, Shopping Cart, Payments, Order Tracking, User Authentication
-Database Node.js and XAMPP  Apache MySQL 
-Payment Integration: Stripe/PayPal API
-2. Functional Requirements
-2.1 User Management
-User Registration & Login 
-Profile Management (update info, address, orders)
-Role-Based Access (Customer/Admin)
-2.2 Product Catalog
-	Display products with images, prices, description.
-Filter & sort products (category, price range, size).
-2.3 Shopping Cart & Checkout
-•	Add/remove items to the cart.
-	Apply promo codes.
-	Secure checkout with payment gateway integration (Stripe/PayPal).
-2.4  Order Processing & Tracking
-Admin panel for order management (approve/cancel).
-Customers can track order status (Processing, Shipped, Delivered).
-Invoice generation.
-2.5 APIs for Mobile & Web Integration
-RESTful APIs for external apps.
-API endpoints for product retrieval, user authentication, orders.
-3. Non-Functional Requirements
-3.1 Performance
-Fast loading times & optimized queries.
-Caching is enabled via Redis for efficiency.
-3.2 Security
-	Secure transactions using HTTPS & SSL encryption.
-Prevent SQL Injection & Cross-Site Scripting (XSS).
-3.3 Usability
-Mobile-friendly, Responsive UI.
-Simple, intuitive design for a seamless shopping experience.
-3.4 Scalability
-Capable of handling high traffic.
-Cloud-ready deployment for automatic scaling.
-4. Database Design
-Users Table (ID, Name, Email, Role)
-	Products Table (ID, Name, Price, Category)
-Orders Table (Order, UserID, Status, Total Amount)
-Payments Table (Payment, Order, Status)
-Cart Table (CartID, UserID, Items
-5. System Architecture
-Html, CSS, JavaScript, Typescript, and some P
-5.2 API Layer
-	RESTful APIs for external integrations.
-	Authentication via JSON Web Tokens
+Application Development
 
+6/1/25
+________________________________________
+Software Requirements Specification (SRS)
+Project: Dusti's Closet Website
+Date: June 1, 2025
+________________________________________
+1. Introduction
+This SRS documents the user interface, features, and code changes made to Dusti's Closet website on June 1, 2025, to improve usability, responsiveness, and admin functionality.
+________________________________________
+2. Scope
+Dusti's Closet is a web-based platform for browsing, purchasing, and managing women's fashion products. The site supports user authentication, product management, appointment booking, and a responsive, visually appealing interface.
+________________________________________
+3. System Overview
+The system is a static/dynamic website using HTML, CSS, and JavaScript for the front end and Node.js/Express for backend authentication and mock data storage. The site is responsive to desktops, laptops, tablets, and mobile phones.
+________________________________________
+4. Recent Changes (June 1, 2025)
+4.1 User Interface & Responsiveness
+•	Full-Screen Background
+The background image stretches from top to bottom and side to side on all devices using background-size: cover and min-height: 100vh.
+•	Responsive Product Grid
+The Cardholder uses CSS Grid to display four cards per row on desktop, two per row on tablets, and one on mobile.
+•	Product Cards
+Each product card displays an image, title, description, and Buy button. Images are responsive and fit the card.
+•	Navigation Bar
+Navigation is styled for clarity and adapts to screen size.
+4.2 Admin Features
+•	Admin Image Edit Controls
+Each product card includes an admin-only image upload control. Admins can preview new images for each product card (client-side only).
+•	Unique IDs
+Each card and image upload control uses unique IDs for correct image preview functionality.
+4.3 Authentication & Account Management
+•	Login and Create Account
+The login page includes a "Create Account" link that directs users to a dedicated account creation page.
+•	Create Account Page
+The account creation page includes a form for email and password, styled consistently with the rest of the site, and submitted to the backend API signup endpoint.
+4.4 Code & Structure
+•	CSS Refactoring
+Styles for body, cards, navigation, and forms have been unified and improved for consistency and responsiveness.
+•	JavaScript Enhancements
+Cart count updates dynamically from local Storage. Admin image preview uses JavaScript and FileReader.
+•	Mock Database
+A mock database module is used for user storage in the backend for capstone demonstration purposes.
+________________________________________
+5. Non-Functional Requirements
+•	Responsiveness
+The site adapts to desktop, tablet, and mobile screens.
+•	Accessibility
+Color contrast and font choices are improved for readability.
+•	Maintainability
+CSS and JS are modular and reusable. Admin controls are marked.
+________________________________________
+6. Future Recommendations
+•	Implement persistent image upload and storage for admin edits.
+•	Add real database integration for user and product management.
+•	Enhance authentication with password reset and user roles.
+•	Add order history and payment gateway integration.
+________________________________________
+7. Appendix
+•	See styles.css, Products.html, login.html, and create-account.html for details on implementation.
+•	All admin controls are for demonstration only and do not persist in changes after reload.
+________________________________________
