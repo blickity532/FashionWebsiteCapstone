@@ -1,0 +1,95 @@
+Updated SRS:
+
+# Software Requirements Specification (SRS)
+## Project: Dusti's Fashion Closet – Cart Counter and Navigation Improvements
+
+---
+
+### 1. Introduction
+
+This SRS documents the recent changes made to the Dusti's Fashion Closet web application to ensure the cart counter is consistent and functional across all pages, and that navigation to the checkout page (order.html) works as expected from every page, including products.html.
+
+---
+
+### 2. Purpose
+
+- Ensure the cart counter accurately reflects the total quantity of items in the cart on all pages.
+- Centralize cart counter logic in a shared JavaScript file (`cart-counter.js`).
+- Guarantee that clicking the cart counter navigates to the checkout page (`order.html`) from every page.
+- Provide a consistent user experience for cart management and navigation.
+
+---
+
+### 3. Scope
+
+These changes affect all pages that display the cart counter and/or allow cart modification, including but not limited to:
+- `index.html`
+- `products.html`
+- `order.html`
+- `ProductsAdmin.html`
+- Any other page with a cart counter in the navigation bar.
+
+---
+
+### 4. Functional Requirements
+
+#### 4.1 Cart Counter Logic
+
+- The cart counter must display the **total quantity** of all items in the cart (not just the number of unique products).
+- The cart counter logic is centralized in `cart-counter.js`:
+  - Reads the cart from `localStorage` (`cartItems` key).
+  - Sums the `quantity` property of each item (defaults to 1 if missing).
+  - Updates the element with `id="cart-count"` in the navigation.
+  - Listens for `storage` events to update the counter in real time across tabs.
+
+#### 4.2 Cart Counter Integration
+
+- All relevant HTML pages include `<script src="cart-counter.js"></script>` before the closing `</body>` tag.
+- The navigation bar contains:
+  ```html
+  <a href="order.html" id="cart-link"><span class="cart-emoji">🛒</span> Cart (<span id="cart-count">0</span>)</a>
+  ```
+- No JavaScript should prevent the default navigation of the cart link.
+
+#### 4.3 Add to Cart Functionality
+
+- After adding an item to the cart and updating `localStorage`, the page must call `updateCartCount()` to immediately reflect the change in the UI.
+
+#### 4.4 Navigation Consistency
+
+- Clicking the cart counter (`#cart-link`) on any page must always navigate to `order.html`.
+- Any previous JavaScript that prevented this default behavior has been removed or corrected.
+
+#### 4.5 Log Off Functionality
+
+- The "Log Off" link removes session data from `localStorage` and redirects the user to the login page.
+
+---
+
+### 5. Non-Functional Requirements
+
+- **Maintainability:** Cart counter logic is not duplicated; it is maintained in a single file.
+- **Usability:** Cart count is always accurate and updates in real time, even across multiple tabs.
+- **Reliability:** The cart counter does not break if cart data is missing or malformed.
+
+---
+
+### 6. Acceptance Criteria
+
+- The cart counter always shows the correct total quantity of items on all pages.
+- Adding to cart on any page updates the counter immediately.
+- Clicking the cart counter always navigates to the checkout page.
+- The cart counter updates in all open tabs when the cart changes.
+- No JavaScript errors occur related to cart counter or navigation.
+
+---
+
+### 7. References
+
+- `cart-counter.js` (shared logic)
+- `products.html`, `order.html`, `index.html`, `ProductsAdmin.html` (HTML integration)
+- Navigation bar markup and event handling
+
+---
+
+**End of SRS**
