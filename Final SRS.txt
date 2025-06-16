@@ -1,0 +1,99 @@
+### Software Requirements Specification (SRS) for Dusti Project
+
+#### 1. **Introduction**
+The Dusti Project is a web-based application designed to manage an online fashion store, Dusti's Closet. It includes features such as product browsing, appointment booking, account creation, and payment processing. The project integrates a backend for data storage and API handling.
+
+---
+
+#### 2. **Purpose**
+The purpose of the Dusti Project is to provide a seamless user experience for customers to browse products, book appointments, create accounts, and make payments securely.
+
+---
+
+#### 3. **Scope**
+The Dusti Project includes the following components:
+- **Frontend**:
+  - products.html: Displays a list of products.
+  - orders.html: Manages the shopping cart and checkout process.
+  - mock-stripe-payment.html: Handles payment processing.
+  - `create-account.html`: Allows users to create accounts.
+  - about.html: Provides information about Dusti's Closet.
+  - services.html: Lists services offered, including personal shopper services.
+  - schedule.html: Allows users to book appointments.
+  - blog.html: Displays blog posts related to fashion and style.
+
+- **Backend**:
+  - `server.js`: Handles API requests for appointments, account creation, and other data.
+  - `appointments.json`: Stores appointment data.
+
+---
+
+#### 4. **Functional Requirements**
+1. **Product Browsing**:
+   - Users can view products on products.html.
+   - Products are displayed with images, descriptions, and prices.
+
+2. **Shopping Cart**:
+   - Users can add items to the cart on orders.html.
+   - Cart counter updates dynamically.
+   - Checkout button redirects to mock-stripe-payment.html.
+
+3. **Payment Processing**:
+   - Users can enter payment details on mock-stripe-payment.html.
+   - Includes fields for cardholder name, card number, expiration date, and CVV.
+
+4. **Account Creation**:
+   - Users can create accounts on `create-account.html`.
+   - Data is sent to the backend for storage.
+
+5. **Appointment Booking**:
+   - Users can book appointments on schedule.html.
+   - Appointment data is stored in `appointments.json`.
+
+6. **Blog**:
+   - Users can read blog posts on blog.html.
+
+7. **Services**:
+   - Users can view services offered on services.html.
+
+8. **About Page**:
+   - Provides information about Dusti's Closet on about.html.
+
+---
+
+#### 5. **Non-Functional Requirements**
+1. **Performance**:
+   - The application should load within 3 seconds on standard devices.
+
+2. **Security**:
+   - Payment data should be handled securely.
+   - Backend endpoints should be protected from unauthorized access.
+
+3. **Scalability**:
+   - The backend should support multiple concurrent users.
+
+4. **Usability**:
+   - The interface should be intuitive and user-friendly.
+
+---
+
+#### 6. **Technologies Used**
+- **Frontend**:
+  - HTML, CSS, JavaScript
+  - Bootstrap for responsive design
+
+- **Backend**:
+  - Node.js with Express
+  - JSON for data storage
+
+---
+
+#### 7. **Future Enhancements**
+- Add user authentication for account creation and login.
+- Integrate a real payment gateway (e.g., Stripe or PayPal).
+- Expand the blog section with categories and search functionality.
+- Add a database (e.g., MongoDB or MySQL) for scalable data storage.
+
+---
+
+Let me know if you'd like to refine or expand this SRS further!

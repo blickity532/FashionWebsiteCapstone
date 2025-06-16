@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decorated Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white; /* Reverted background color to white */
+            color: black; /* Reverted text color to black */
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Ensures alignment of navbar elements */
+            align-items: center; /* Aligns all items vertically */
+            padding: 10px 20px; /* Adds consistent spacing */
+            background-color: #343a40; /* Sets a uniform background color */
+        }
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white; /* Set font color to white */
+            text-decoration: none; /* Remove underline from 'My Site' */
+            margin-right: 10px; /* Moved the logo closer to the navbar */
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+        .navbar ul li a:hover {
+            color: #FFD700;
+        }
+        .navbar .search {
+            display: flex;
+            align-items: center; /* Align search box with the navigation bar */
+            gap: 5px;
+            align-self: center; /* Dropped the text box to match the alignment of navbar links */
+            margin: 0 auto; /* Centered the search box for even calibration with the navbar */
+            transform: translate(-2%, 2%); /* Moved the search box down by 2% and left by 2% */
+        }
+        .navbar .search input {
+            width: auto; /* Reset to default size */
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+        }
+        .navbar .search button {
+            padding: 5px 10px;
+            background-color: #0749ff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: rgb(250, 246, 246);
+            height: 20x; /* Match the height of the search box */
+            z-index: auto; /* Removed orders overlay on Go button */
+        }
+        .navbar .search button:hover {
+            background-color: #0749ff;
+            color: white;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        h2 {
+            text-align: center;
+        }
+        .navbar .nav-link.active {
+            background-color: transparent; /* Remove background color */
+            box-shadow: none; /* Remove box-shadow */
+            border: none; /* Remove border */
+            color: inherit; /* Ensure text color remains consistent */
+        }
+        .navbar a#cart-link {
+            color: #ffffff; /* Ensured cart text is white */
+        }
+        input[type="submit"] {
+            background-color: blue; /* Added blue background to the submit button */
+            color: white; /* Changed text color to white for the submit button */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Dusti's Closet</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.index.html">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="orders.html">Orders</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Go</button>
+        </div>
+        <a href="orders.html" id="cart-link"><span class="cart-emoji">🛒</span> Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+    <h2>Book an Appointment</h2>
+    <form action="/submit-appointment" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+    
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required style="appearance: none;"> <!-- Added custom styling for number incrementer buttons -->
+    
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+    
+        <input type="submit" value="Book Appointment" style="background-color: blue; color: white;">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+                const comments = document.getElementById('comments').value;
+
+                const appointment = { name, email, date, time, comments };
+
+                let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+
+                // Check if the date and time are already booked
+                const isDateAvailable = !appointments.some(app => app.date === date && app.time === time);
+
+                if (isDateAvailable) {
+                    appointments.push(appointment);
+                    localStorage.setItem('appointments', JSON.stringify(appointments));
+
+                    alert('You are all set!');
+                } else {
+                    // Suggest alternative times
+                    const alternativeTimes = ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"].filter(altTime => {
+                        return !appointments.some(app => app.date === date && app.time === altTime);
+                    });
+
+                    if (alternativeTimes.length > 0) {
+                        alert(`Sorry, date not available. Try one of these times: ${alternativeTimes.join(', ')}`);
+                    } else {
+                        alert('Sorry, date not available. No alternative times available.');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

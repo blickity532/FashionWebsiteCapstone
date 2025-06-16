@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .login-form input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-form button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #0056b3;
+        }
+        nav {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            padding: 10px 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #343a40;
+        }
+        .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+        .navbar ul {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between; /* Evenly space trailing links */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin: 0 15px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .search {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+        .navbar .search {
+            margin: 0 auto; /* Center the search field */
+            display: flex;
+            gap: 5px;
+        }
+        .navbar .search input {
+            width: 85%; /* Reduce width by 15% */
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+        }
+        .search button {
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search button:hover {
+            background-color: #0056b3;
+        }
+        #cart-link {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Dusti's Closet</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.index.html">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="orders.html">Orders</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Go</button>
+        </div>
+        <a href="orders.html" id="cart-link"><span class="cart-emoji">🛒</span> Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form class="login-form" action="/login" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script>
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default navigation
+                const targetPage = event.target.getAttribute('href');
+                window.location.href = targetPage; // Navigate to the intended page
+            });
+        });
+    </script>
+</body>
+</html>

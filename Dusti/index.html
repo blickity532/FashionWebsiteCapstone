@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Dresses Carousel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add some custom styles for the navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: hwb(214 1% 89% / 0.87);
+        }
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+        }
+        .navbar ul li {
+            display: inline;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #f7f7f8;
+        }
+        .navbar .search {
+            display: flex;
+            gap: 5px;
+            margin-right: 20px; /* Adjust this value to change the space */
+        }
+        .navbar .search input {
+            padding: 5px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .navbar .search button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #0a7af3;
+            color: rgb(12, 12, 12);
+            cursor: pointer;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #f7f7f8;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Dusti's Closet</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.index.html">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="Schedule.html">Schedule</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="orders.html">Orders</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>Go</button>
+        </div>
+        <a href="orders.html" id="cart-link"><span class="cart-emoji">🛒</span> Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <div id="dressCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- First Slide -->
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/800x400?text=Red+Dress" class="d-block w-100" alt="Red Dress">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Elegant Red Dress</h5>
+                    <p>A stunning red dress perfect for evening events.</p>
+                </div>
+            </div>
+            <!-- Second Slide -->
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x400?text=Blue+Dress" class="d-block w-100" alt="Blue Dress">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Chic Blue Dress</h5>
+                    <p>A stylish blue dress for casual outings.</p>
+                </div>
+            </div>
+            <!-- Third Slide -->
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x400?text=Black+Dress" class="d-block w-100" alt="Black Dress">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Classic Black Dress</h5>
+                    <p>A timeless black dress for formal occasions.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#dressCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#dressCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default navigation
+                const targetPage = event.target.getAttribute('href');
+                window.location.href = targetPage; // Navigate to the intended page
+            });
+        });
+    </script>
+</body>
+</html>
