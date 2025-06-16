@@ -49,9 +49,7 @@
 - This project incorporates open-source technologies and tools to create a functional web application.
 - Special thanks to the developers of the cited frameworks and tools for their contributions to the open-source community.
 
----
-
-Let me know if you'd like to add even more specific citations or refine this file further!# Works Cited
+--
 
 ## Frameworks and Libraries
 1. **Bootstrap**  
@@ -104,4 +102,3 @@ Let me know if you'd like to add even more specific citations or refine this fil
 
 ---
 
-Let me know if you'd like to add even more specific citations or
