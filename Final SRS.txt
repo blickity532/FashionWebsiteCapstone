@@ -1,99 +1,95 @@
-### Software Requirements Specification (SRS) for Dusti Project
-
-#### 1. **Introduction**
-The Dusti Project is a web-based application designed to manage an online fashion store, Dusti's Closet. It includes features such as product browsing, appointment booking, account creation, and payment processing. The project integrates a backend for data storage and API handling.
-
----
-
-#### 2. **Purpose**
-The purpose of the Dusti Project is to provide a seamless user experience for customers to browse products, book appointments, create accounts, and make payments securely.
+Blake Riley
+Jesse Harlan
+Application Developent
+6/15/25
 
 ---
 
-#### 3. **Scope**
-The Dusti Project includes the following components:
-- **Frontend**:
-  - products.html: Displays a list of products.
-  - orders.html: Manages the shopping cart and checkout process.
-  - mock-stripe-payment.html: Handles payment processing.
-  - `create-account.html`: Allows users to create accounts.
-  - about.html: Provides information about Dusti's Closet.
-  - services.html: Lists services offered, including personal shopper services.
-  - schedule.html: Allows users to book appointments.
-  - blog.html: Displays blog posts related to fashion and style.
+### Software Requirements Specification (SRS) — Dusti Project
 
-- **Backend**:
-  - `server.js`: Handles API requests for appointments, account creation, and other data.
-  - `appointments.json`: Stores appointment data.
+#### 1. Introduction
+The Dusti Project is a web-based application for managing an online fashion store, Dusti's Closet. It offers users the ability to browse products, book appointments, create accounts, and interact with various sections of the store.
 
 ---
 
-#### 4. **Functional Requirements**
-1. **Product Browsing**:
-   - Users can view products on products.html.
-   - Products are displayed with images, descriptions, and prices.
-
-2. **Shopping Cart**:
-   - Users can add items to the cart on orders.html.
-   - Cart counter updates dynamically.
-   - Checkout button redirects to mock-stripe-payment.html.
-
-3. **Payment Processing**:
-   - Users can enter payment details on mock-stripe-payment.html.
-   - Includes fields for cardholder name, card number, expiration date, and CVV.
-
-4. **Account Creation**:
-   - Users can create accounts on `create-account.html`.
-   - Data is sent to the backend for storage.
-
-5. **Appointment Booking**:
-   - Users can book appointments on schedule.html.
-   - Appointment data is stored in `appointments.json`.
-
-6. **Blog**:
-   - Users can read blog posts on blog.html.
-
-7. **Services**:
-   - Users can view services offered on services.html.
-
-8. **About Page**:
-   - Provides information about Dusti's Closet on about.html.
+#### 2. Purpose
+The purpose of this project is to deliver a seamless, user-friendly experience for customers to explore products, schedule appointments, register accounts, and simulate payment processing for purchasing fashionable clothing.
 
 ---
 
-#### 5. **Non-Functional Requirements**
-1. **Performance**:
-   - The application should load within 3 seconds on standard devices.
+#### 3. Scope
+The final implementation includes:
 
-2. **Security**:
-   - Payment data should be handled securely.
-   - Backend endpoints should be protected from unauthorized access.
+- **Frontend:**
+  - `products.html`: Displays available products with images, descriptions, and prices.
+  - `orders.html`: Manages a shopping cart, with dynamic updates and checkout process.
+  - `mock-stripe-payment.html`: Simulates payment processing with fields for card details.
+  - `create-account.html`: Allows users to register accounts.
+  - `about.html`: Offers information about Dusti's Closet.
+  - `services.html`: Lists available services, including personal shopper options.
+  - `schedule.html`: Enables appointment booking.
+  - `blog.html`: Displays fashion and style blog posts.
 
-3. **Scalability**:
-   - The backend should support multiple concurrent users.
-
-4. **Usability**:
-   - The interface should be intuitive and user-friendly.
-
----
-
-#### 6. **Technologies Used**
-- **Frontend**:
-  - HTML, CSS, JavaScript
-  - Bootstrap for responsive design
-
-- **Backend**:
-  - Node.js with Express
-  - JSON for data storage
+- **Backend:**
+  - `server.js`: Handles API requests for features such as appointment booking and account creation.
+  - `appointments.json`: Stores appointment booking data.
 
 ---
 
-#### 7. **Future Enhancements**
-- Add user authentication for account creation and login.
-- Integrate a real payment gateway (e.g., Stripe or PayPal).
-- Expand the blog section with categories and search functionality.
-- Add a database (e.g., MongoDB or MySQL) for scalable data storage.
+#### 4. Functional Requirements
+
+1. **Product Browsing:**
+   - Users can view and explore product listings on `products.html`.
+   - Each product shows an image, description, and price.
+
+2. **Shopping Cart:**
+   - Users can add products to a cart managed by `orders.html`.
+   - The cart counter updates in real time.
+   - Checkout redirects users to the mock payment page.
+
+3. **Payment Processing:**
+   - Users can input payment details in `mock-stripe-payment.html`.
+   - Cardholder name, card number, expiration, and CVV fields are present.
+
+4. **Account Creation:**
+   - Users can create accounts through `create-account.html`.
+   - Account data is sent to the backend for storage.
+
+5. **Appointment Booking:**
+   - Users can schedule appointments using `schedule.html`.
+   - Appointment details are saved in `appointments.json`.
+
+6. **Blog:**
+   - Users can read blog posts on `blog.html`.
+
+7. **Services:**
+   - All available services are listed on `services.html`.
+
+8. **About Page:**
+   - Information about the store is provided on `about.html`.
 
 ---
 
-Let me know if you'd like to refine or expand this SRS further!
+#### 5. Non-Functional Requirements
+
+- **Performance:** Application should load within 3 seconds on standard devices.
+- **Security:** Payment data is handled securely in the simulated environment; backend endpoints are protected.
+- **Scalability:** Backend supports multiple concurrent users.
+- **Usability:** Interface is intuitive and user-friendly.
+
+---
+
+#### 6. Technologies Used
+
+- **Frontend:** HTML, CSS, JavaScript, Bootstrap (for responsive design)
+- **Backend:** Node.js with Express, JSON for data storage
+
+---
+
+#### 7. Future Enhancements
+
+- Add real user authentication for account creation and login.
+- Integrate a real payment gateway (e.g., Stripe, PayPal).
+- Expand the blog with categories and search.
+- Replace JSON with a scalable database (e.g., MongoDB or MySQL).
+
